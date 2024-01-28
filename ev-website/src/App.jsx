@@ -11,7 +11,7 @@ const App = () => {
     {text1:"Give in to", text2:"your passions"},
   ]
   
-  const[heroCount, setHeroCount] = useState(0);
+  const[heroCount, setHeroCount] = useState(2);
   const[playStatus, setPlayStatus] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ const App = () => {
       <Navbar/>
       <Hero
         setPlayStatus = {setPlayStatus}
-        heroData = {heroData}
+        heroData = {heroData[heroCount]}
         heroCount = {heroCount}
         setHeroCount = {setHeroCount}
         playStatus = {playStatus}
