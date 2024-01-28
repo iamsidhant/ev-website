@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Background from './components/Background/Background';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/hero/Hero';
@@ -13,6 +13,12 @@ const App = () => {
   
   const[heroCount, setHeroCount] = useState(2);
   const[playStatus, setPlayStatus] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setHeroCount((count) => {return count===2? 0 : count+1})
+    }, 3000);
+  }, [])
 
   return (
     <div>
